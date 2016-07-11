@@ -205,13 +205,10 @@ controller.on('outgoing_webhook', (bot, message) => {
   bot.replyPublic(message, '**Yawn**');
 });
 
-controller.hears([''], ['direct_message', 'direct_mention', 'mention'], (bot, message) => {
-  bot.reply(message, 'I am practicing my English! Stop bothering me... But let me know if you are hungry.');
-    // carefully examine and
-    // handle the message here!
-    // Note: Platforms such as Slack send many kinds of messages, not all of which contain a text field!
+controller.hears(['help'], ['direct_message', 'direct_mention', 'mention'], (bot, message) => {
+  bot.reply(message, 'I can help you find restaurants (type "food") or play a game (type "game")!');
 });
 
-// controller.on('message_received', (bot, message) => {
-//   bot.reply(message, 'stop typing!');
-// });
+controller.hears([''], ['direct_message', 'direct_mention', 'mention'], (bot, message) => {
+  bot.reply(message, 'I am practicing my English! Stop bothering me... But let me know if you are hungry.');
+});
