@@ -83,7 +83,7 @@ controller.hears(['food', 'hungry', 'breakfast', 'lunch', 'dinner'], ['direct_me
     .catch((err) => {
       console.log('Error');
       console.error(err);
-      convo.say('Uh oh! There were no results...');
+      convo.say('Uh oh! I could not connect to Yelp...');
       convo.next();
     });
   };
