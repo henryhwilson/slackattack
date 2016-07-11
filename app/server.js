@@ -201,6 +201,10 @@ controller.hears(['what', 'where', 'why', 'how'], ['direct_message', 'direct_men
   bot.reply(message, 'That is a great question... I am stumped! Maybe my cousin Siri knows?');
 });
 
+controller.on('outgoing_webhook', (bot, message) => {
+  bot.replyPublic(message, '**Yawn**');
+});
+
 controller.hears([''], ['direct_message', 'direct_mention', 'mention'], (bot, message) => {
   bot.reply(message, 'I am practicing my English! Stop bothering me... But let me know if you are hungry.');
     // carefully examine and
